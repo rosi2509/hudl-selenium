@@ -58,7 +58,7 @@ hudl-selenium/
 
 ### 1️⃣ Clone the repository
 
-git clone https://github.com/YOUR_USERNAME/hudl-selenium.git
+git clone https://github.com/rosi2509/hudl-selenium.git
 cd hudl-selenium
 
 2️⃣ Install dependencies
