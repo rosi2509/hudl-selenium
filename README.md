@@ -31,6 +31,7 @@ The framework demonstrates best practices for UI test automation:
 ## Project Structure
 
 hudl-selenium/
+
 **src/**
 
   -BasePage.js → shared helper methods (click, type, waitForVisible, etc.)
@@ -45,7 +46,6 @@ hudl-selenium/
 
 **.env** → stores sensitive credentials (not committed to GitHub)
 **.gitignore**→ excludes node_modules, logs, .env, etc.
-
 **package.json** → project metadata, dependencies, and scripts
 
 **README.md** → project documentation and setup guide
