@@ -78,13 +78,10 @@ npm test
 
 🏗 Future Enhancements
 
-Add tests for "Login with Google / Apple / Facebook".
+- **Add tests for "Login with Google / Apple / Facebook".**
+- **Add HTML reporting (e.g., Mochawesome)**
+- **Parameterize tests for multiple environments (staging, prod**
 
-Integrate with GitHub Actions for CI automation.
-
-Add HTML reporting (e.g., Mochawesome).
-
-Parameterize tests for multiple environments (staging, prod).
 
 👤 Author
 Rosibel Ramirez
