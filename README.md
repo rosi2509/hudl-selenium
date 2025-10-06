@@ -84,5 +84,7 @@ Parameterize tests for multiple environments (staging, prod).
 
 👤 Author
 Rosibel Ramirez
+
 Test Automation Engineer
+
 📧 rosibel.ramirez2509@gmail.com
