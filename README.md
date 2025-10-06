@@ -61,6 +61,7 @@ npm install
 3️⃣ Create a .env file
 
 In the project root, create a file named .env and add your Hudl credentials:
+
 HUDL_EMAIL=your-email@example.com
 HUDL_PASSWORD=your-password
 
@@ -78,8 +79,11 @@ npm test
 🏗 Future Enhancements
 
 Add tests for "Login with Google / Apple / Facebook".
+
 Integrate with GitHub Actions for CI automation.
+
 Add HTML reporting (e.g., Mochawesome).
+
 Parameterize tests for multiple environments (staging, prod).
 
 👤 Author
