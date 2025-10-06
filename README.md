@@ -31,19 +31,25 @@ The framework demonstrates best practices for UI test automation:
 ## Project Structure
 
 hudl-selenium/
-│
-├── src/
-│   ├── BasePage.js        # Shared helper methods (click, type, waits)
-│   ├── LoginPage.js       # Page Object for Hudl login
-│   └── config.js          # Centralized configuration file
-│
-├── tests/
-│   └── login.spec.js      # Positive & negative test cases
-│
-├── .env                   # Sensitive credentials (not committed)
-├── .gitignore             # Ignores node_modules, logs, .env, etc.
-├── package.json           # Dependencies & npm scripts
-└── README.md              # Project documentation
+src/
+
+BasePage.js → shared helper methods (click, type, waitForVisible, etc.)
+
+LoginPage.js → Page Object for the Hudl login page
+
+config.js → centralized configuration (URLs, timeouts, headless mode)
+
+tests/
+
+login.spec.js → positive and negative login test cases
+
+.env → stores sensitive credentials (not committed to GitHub)
+
+.gitignore → excludes node_modules, logs, .env, etc.
+
+package.json → project metadata, dependencies, and scripts
+
+README.md → project documentation and setup guide
 
 ---
 
