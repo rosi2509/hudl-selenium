@@ -58,32 +58,36 @@ hudl-selenium/
 
 ### 1️⃣ Clone the repository
 
+```
 git clone https://github.com/rosi2509/hudl-selenium.git
 cd hudl-selenium
+```
 
-2️⃣ Install dependencies
+### 2️⃣ Install dependencies
 
-npm install
+`npm install`
 
-3️⃣ Create a .env file
+### 3️⃣ Create a .env file
 
 In the project root, create a file named .env and add your Hudl credentials:
 
+```
 HUDL_EMAIL=your-email@example.com
 HUDL_PASSWORD=your-password
+```
 
-4️⃣ Run the tests
+### 4️⃣ Run the tests
 
-npm test
+`npm test`
 
-🧪 Test Scenarios
+## 🧪 Test Scenarios
 | Test Name                                            | Description                                                                 |
 | ---------------------------------------------------- | --------------------------------------------------------------------------- |
 | **should show error with invalid credentials**       | Verifies Hudl shows the correct error message when credentials are invalid. |
 | **should login successfully with valid credentials** | Verifies that valid credentials log the user in and show the user avatar.   |
 .
 
-🏗 Future Enhancements
+## 🏗 Future Enhancements
 
 - **Add tests for "Login with Google / Apple / Facebook".**
 - **Add HTML reporting (e.g., Mochawesome)**
