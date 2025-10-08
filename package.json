@@ -1,0 +1,19 @@
+{
+  "name": "hudl-selenium",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha tests/**/*.spec.js --timeout 30000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "selenium-webdriver": "^4.35.0"
+  },
+  "devDependencies": {
+    "mocha": "^11.7.3"
+  }
+}
