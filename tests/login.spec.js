@@ -1,6 +1,12 @@
 const { Builder } = require("selenium-webdriver");
-const assert = require("assert");
 require("dotenv").config(); // Load credentials from .env (never hardcode passwords!)
+
+// Chai setup
+const chai = require("chai");
+const chaiAsPromised = require("chai-as-promised").default || require("chai-as-promised");
+chai.use(chaiAsPromised); 
+const { expect } = chai;
+
 
 // Import Page Object (keeps selectors and actions separate from tests)
 const LoginPage = require("../src/LoginPage");
@@ -31,8 +37,7 @@ describe("Hudl Login", function () {
     await loginPage.open();                                   // Go to login page
     await loginPage.login("fake@example.com", "wrongpassword"); // Try wrong login
     const error = await loginPage.waitForPasswordError();     // Wait for error
-    assert.ok(await error.isDisplayed(), 
-      "Expected error message to be displayed for invalid login");
+    expect(await error.isDisplayed()).to.be.true;
   });
 
   // Positive test → valid credentials should login
@@ -40,7 +45,6 @@ describe("Hudl Login", function () {
     await loginPage.open();                                   // Go to login page
     await loginPage.login(process.env.HUDL_EMAIL, process.env.HUDL_PASSWORD); // Use .env creds
     const avatar = await loginPage.waitForSuccessfulLogin();  // Wait for avatar
-    assert.ok(await avatar.isDisplayed(), 
-      "Expected avatar to be displayed after successful login");
+    expect(await avatar.isDisplayed()).to.be.true;
   });
 });
