@@ -1,6 +1,7 @@
 const { By ,Key} = require("selenium-webdriver");
 const BasePage = require("./BasePage"); // helper methods
 const config = require("./config");     // env config
+const testData = require ("../src/test-data");
 
 class LoginPage extends BasePage {
   constructor(driver) {

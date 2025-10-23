@@ -35,6 +35,41 @@ async click(locator, timeout = config.explicitTimeoutMs) {
   return el;
 }
 
+// Take a screenshot and save to /screenshots folder
+async takeScreenshot(filename) {
+  try {
+    const screenshot = await this.driver.takeScreenshot();
+    const fs = require("fs");
+    const path = require("path");
+    const dir = path.join(__dirname, "../screenshots");
+
+
+    if (!fs.existsSync(dir)) {
+      fs.mkdirSync(dir);
+    }
+
+
+    fs.writeFileSync(`${dir}/${filename}.png`, screenshot, "base64");
+    console.log(`Screenshot saved: ${dir}/${filename}.png`);
+  } catch (err) {
+    console.error("Failed to take screenshot:", err);
+  }
+}
+
+
+// Safe click — retries click and takes screenshot if it fails
+async safeClick(locator, timeout = 10000) {
+  try {
+    const element = await this.waitForVisible(locator, timeout);
+    await element.click();
+  } catch (error) {
+    console.error("Click failed, capturing screenshot...");
+    await this.takeScreenshot(`click-error-${Date.now()}`);
+    throw error;
+  }
+
+
+}
 }
 
 module.exports = BasePage;

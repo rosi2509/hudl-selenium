@@ -39,3 +39,6 @@ coverage
 .vscode/
 .idea/
 .DS_Store
+
+#Test artifacts
+screenshots/
