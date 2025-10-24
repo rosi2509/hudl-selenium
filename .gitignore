@@ -42,3 +42,6 @@ coverage
 
 #Test artifacts
 screenshots/
+
+#Report
+mochawesome-report/

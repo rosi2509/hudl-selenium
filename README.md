@@ -21,10 +21,11 @@ The framework demonstrates best practices for UI test automation:
 |-----------|----------------|
 | Language | JavaScript (Node.js) |
 | Test Runner | Mocha |
-| Assertions | Node.js `assert` |
+| Assertions | Chai + Chai-as-promised |
 | Automation | Selenium WebDriver |
 | Browser | Microsoft Edge (can switch to Chrome easily) |
 | Config Management | dotenv (`.env` file) |
+| Reporting | Mochawesome (HTML report for test runs) |
 
 ---
 
@@ -34,11 +35,13 @@ hudl-selenium/
 
 **src/**
 
-  -BasePage.js → shared helper methods (click, type, waitForVisible, etc.)
+  -BasePage.js → shared helper methods (click, type, waitForVisible, safeClick, takeScreenshot, etc)
 
   -LoginPage.js → Page Object for the Hudl login page
 
   -config.js → centralized configuration (URLs, timeouts, headless mode)
+  
+  -test-data → centralized test data (valid/invalid credentials)
 
 **tests/**
 
@@ -56,18 +59,18 @@ hudl-selenium/
 
 ##  Setup Instructions
 
-### 1️⃣ Clone the repository
+### 1 Clone the repository
 
 ```
 git clone https://github.com/rosi2509/hudl-selenium.git
 cd hudl-selenium
 ```
 
-### 2️⃣ Install dependencies
+### 2 Install dependencies
 
 `npm install`
 
-### 3️⃣ Create a .env file
+### 3 Create a .env file
 
 In the project root, create a file named .env and add your Hudl credentials:
 
@@ -75,8 +78,13 @@ In the project root, create a file named .env and add your Hudl credentials:
 HUDL_EMAIL=your-email@example.com
 HUDL_PASSWORD=your-password
 ```
+### 4 Create screenshots folder
 
-### 4️⃣ Run the tests
+Before running tests, create a folder named `screenshots` in the project root:
+
+This is where any automatic screenshots (e.g., on test failures) will be saved.
+
+### 5 Run the tests
 
 `npm test`
 
@@ -85,12 +93,11 @@ HUDL_PASSWORD=your-password
 | ---------------------------------------------------- | --------------------------------------------------------------------------- |
 | **should show error with invalid credentials**       | Verifies Hudl shows the correct error message when credentials are invalid. |
 | **should login successfully with valid credentials** | Verifies that valid credentials log the user in and show the user avatar.   |
-.
+
 
 ## 🏗 Future Enhancements
 
 - **Add tests for "Login with Google / Apple / Facebook".**
-- **Add HTML reporting (e.g., Mochawesome)**
 - **Parameterize tests for multiple environments (staging, prod**
 
 
